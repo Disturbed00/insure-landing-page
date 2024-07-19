@@ -97,7 +97,6 @@ a {
 .hero-image {
   filter: brightness(90%);
   width: 100%;
-  display: block;
 }
 
 .hero-content {
@@ -120,10 +119,10 @@ a {
 }
 
 .hero-heading {
-  font-size: 5rem;
+  font-size: 4.5rem;
   text-align: center;
   line-height: 1;
-  margin-top: 10rem;
+  /* margin-top: 10rem; */
   color: var(--color-Very-Light-Gray);
   padding: 0 0rem;
   z-index: 2;
