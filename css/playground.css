@@ -34,12 +34,54 @@ a {
   background: var(--color-Dark-Violet);
   display: flex;
   flex-direction: row-reverse;
+  position: relative;
+}
+
+/* .hero-container::before,
+.hero-container::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+.hero-content-container::before {
+  content: "";
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  position: absolute;
+  background-image: url("../images/bg-pattern-intro-left-desktop.svg");
+  width: 100%;
+  height: 100%;
+  left: -3rem;
+  bottom: -50%;
+}
+
+.hero-container::after {
+  content: "";
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: absolute;
+  background-image: url("../images/bg-pattern-intro-right-desktop.svg");
+  width: 100%;
+  height: 100%;
+  right: -4rem;
+  bottom: 5rem;
 }
 
 .hero-image {
   transform: translateY(16rem);
   margin-right: 7rem;
+  width: 100rem;
 }
+/* 
+.pattern-right {
+  position: absolute;
+  left: -2rem;
+  bottom: -10rem;
+  z-index: 1;
+} */
 
 .hero-heading {
   font-size: 7rem;
@@ -52,6 +94,7 @@ a {
   width: 100%;
   margin-left: 10rem;
   margin-right: 1rem;
+  z-index: 2;
 }
 
 .hero-content-container hr {
@@ -76,7 +119,7 @@ a {
 }
 
 .btn {
-  margin-top: 4rem;
+  margin-top: 3rem;
   border: 1px solid white;
   color: white;
   background: transparent;
@@ -84,6 +127,8 @@ a {
   text-transform: uppercase;
   cursor: pointer;
   transition: background 0.5s;
+  /* position: absolute;
+  z-index: 2; */
 }
 
 .btn:hover {
@@ -91,18 +136,21 @@ a {
   color: black;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1050px) {
   .hero-container {
     display: flex;
     flex-direction: column;
   }
 
-  .pattern-right {
-    content: url(../images/bg-pattern-intro-left-mobile.svg);
-    position: absolute;
-    z-index: 1;
-    bottom: 40rem;
-    left: 0;
+  .hero-content-container::before {
+    display: none;
+  }
+
+  .hero-container::after {
+    background-image: url("../images/bg-pattern-intro-right-mobile.svg");
+    background-position: bottom right;
+    right: 0.5rem;
+    top: 18rem;
   }
 
   .hero-content-container hr {
@@ -112,8 +160,8 @@ a {
   .hero-content-container {
     margin: 0;
     text-align: center;
-    position: relative;
-    z-index: 1;
+    /* position: relative;
+    z-index: 1; */
   }
 
   .hero-text-container {
@@ -121,18 +169,20 @@ a {
   }
 
   .hero-image {
-    content: url(../images/image-intro-mobile.jpg);
+    content: url(../images/image-intro-desktop.jpg);
     transform: none;
     width: 100%;
+    height: 50%;
     margin-right: 0;
     margin-bottom: 2rem;
     z-index: 2;
+    align-self: center;
   }
 
   .hero-heading {
     font-size: 5rem;
     text-align: center;
-    margin-top: 8rem;
+    margin-top: 5rem;
     padding: 0 2rem;
     z-index: 2;
   }
@@ -149,3 +199,9 @@ a {
     margin-bottom: 8rem;
   }
 }
+/* 
+@media screen and (max-width: 374px) {
+  .hero-container::before {
+    top: 39rem;
+  }
+} */
