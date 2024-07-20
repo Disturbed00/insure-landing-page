@@ -258,3 +258,40 @@ a {
     margin-bottom: 8rem;
   }
 }
+
+.callout-container {
+  display: flex;
+  background: var(--color-Dark-Violet);
+  justify-content: space-between;
+  width: 80%;
+  margin: 10rem auto;
+  padding: 6rem 0;
+  position: relative;
+}
+
+.callout-container::after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/bg-pattern-how-we-work-desktop.svg);
+  background-size: cover;
+  background-position: right;
+  width: 47rem;
+  height: 23rem;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.callout-heading {
+  font-size: 4rem;
+  color: white;
+  line-height: 1.2;
+  margin-left: 5rem;
+}
+
+.callout-container .btn {
+  z-index: 1;
+  margin-right: 7rem;
+  padding: 1.2rem 3rem;
+  align-self: center;
+}
