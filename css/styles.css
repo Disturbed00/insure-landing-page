@@ -321,3 +321,99 @@ a {
     margin: 0;
   }
 }
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  position: fixed;
+  z-index: 10;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-list {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-Dark-Violet);
+  color: white;
+  justify-content: center;
+  z-index: 9;
+}
+
+.nav-item {
+  padding: 1rem 0;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.nav-item > a,
+.nav-item > button {
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  text-transform: inherit;
+}
+
+.nav-item > button {
+  border: 1px solid white;
+  padding: 1rem 2rem;
+}
+
+.nav-toggler {
+  cursor: pointer;
+}
+
+.collapsible-expanded .nav-list {
+  display: flex;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-toggler {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    height: auto;
+    background: none;
+    color: black;
+    justify-content: flex-end;
+  }
+
+  .nav-item > a,
+  .nav-item > button {
+    color: black;
+  }
+
+  .nav-item > button {
+    border: 1px solid var(--color-Very-Dark-Violet);
+    color: var(--color-Very-Dark-Violet);
+  }
+
+  .nav-item > button:hover {
+    background: var(--color-Very-Dark-Violet);
+    color: white;
+  }
+}

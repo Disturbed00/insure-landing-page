@@ -13,15 +13,22 @@
     <title>Frontend Mentor | Insure landing page</title>
   </head>
   <body>
-    <div class="callout-container">
-      <div class="callout-heading">
-        <h3>
-          Find out more <br />
-          about how we work
-        </h3>
-      </div>
-      <button class="btn">Now we work</button>
-    </div>
+    <header>
+      <nav class="nav collapsible">
+        <img src="images/logo.svg" alt="logo" class="logo" />
+        <img
+          src="images/icon-menu.png"
+          alt="menu"
+          class="menu-icon nav-toggler"
+        />
+        <ul class="list nav-list collapsible-content">
+          <li class="nav-item"><a href="#">Now we work</a></li>
+          <li class="nav-item"><a href="#">Blog</a></li>
+          <li class="nav-item"><a href="#">Account</a></li>
+          <li class="nav-item"><button class="btn">view plans</button></li>
+        </ul>
+      </nav>
+    </header>
     <script src="scripts/script.js"></script>
   </body>
 </html>
