@@ -1,5 +1,5 @@
 function handleResize() {
-    const brElements = document.querySelectorAll(".hero-text br");
+    const brElements = document.querySelectorAll(".hero-text br", ".callout-heading br");
     const mediaQuery = window.matchMedia("(min-width: 1024px)");
 
     if(mediaQuery.matches) {
