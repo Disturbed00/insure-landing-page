@@ -23,7 +23,7 @@ html {
 
 body {
   line-height: 1.5;
-  font-family: "Inria Serif", serif;
+  font-family: "Karla", sans-serif;
 }
 
 a {
@@ -335,8 +335,8 @@ a {
   background: white;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
-  position: fixed;
+  padding: 2.5rem;
+  position: absolute;
   z-index: 10;
   align-items: center;
   width: 100%;
@@ -346,41 +346,75 @@ a {
   display: none;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  top: 0;
+  position: fixed;
+  top: 7rem;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--color-Dark-Violet);
+  width: 100vw;
+  height: calc(100vh - 7rem);
+  background: var(--color-Very-Dark-Violet);
   color: white;
-  justify-content: center;
+  justify-content: start;
   z-index: 9;
+  padding-top: 5rem;
+}
+
+.nav-list::after {
+  content: "";
+  background-image: url(../images/bg-pattern-mobile-nav.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100vw;
+  height: 50vh;
+  top: 44rem;
+  left: 0rem;
+  overflow: hidden;
 }
 
 .nav-item {
   padding: 1rem 0;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .nav-item > a,
 .nav-item > button {
-  color: white;
+  color: var(--color-Very-Light-Gray);
   text-decoration: none;
   background: none;
   border: none;
   cursor: pointer;
   font-size: inherit;
   text-transform: inherit;
+  font-weight: bold;
+  opacity: 0.8;
+  transition: color 0.3s;
+}
+
+.nav-item > a:hover {
+  color: var(--color-Grayish-Blue);
 }
 
 .nav-item > button {
-  border: 1px solid white;
-  padding: 1rem 2rem;
+  border: 1px solid var(--color-Very-Light-Gray);
+  padding: 1.5rem 7rem;
 }
 
 .nav-toggler {
   cursor: pointer;
+  transition: box-shadow 0.3s;
+  box-shadow: 0 0 0 3px var(--color-Dark-Violet);
+  padding: 0.3rem;
+}
+
+.nav.collapsible-expanded .nav-toggler {
+  opacity: 1;
+  content: url(../images/icon-close.png);
+  cursor: pointer;
+  box-shadow: 0 0 0 3px var(--color-Dark-Violet);
+  padding: 0.3rem;
 }
 
 .collapsible-expanded .nav-list {
@@ -392,6 +426,10 @@ a {
     display: none;
   }
 
+  .nav {
+    gap: 2rem;
+  }
+
   .nav-list {
     display: flex;
     position: static;
@@ -399,21 +437,41 @@ a {
     height: auto;
     background: none;
     color: black;
-    justify-content: flex-end;
+    padding: 0;
+    justify-content: end;
+    margin-left: 2rem;
+  }
+
+  .nav-list::after {
+    display: none;
   }
 
   .nav-item > a,
   .nav-item > button {
-    color: black;
+    color: var(--color-Dark-Grayish-Violet);
+    margin-left: 5rem;
+    font-size: 2rem;
+  }
+
+  .nav-item > a {
+    transition: color 0.3s;
+    text-align: start;
   }
 
   .nav-item > button {
     border: 1px solid var(--color-Very-Dark-Violet);
     color: var(--color-Very-Dark-Violet);
+    margin-top: 0;
+    padding: 1rem 7rem;
+  }
+
+  .nav-item > a:hover {
+    color: var(--color-Dark-Violet);
   }
 
   .nav-item > button:hover {
-    background: var(--color-Very-Dark-Violet);
+    background: var(--color-Dark-Violet);
     color: white;
+    opacity: 1;
   }
 }
