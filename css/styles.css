@@ -89,7 +89,7 @@ a {
     text-align: start;
     padding: 0;
     width: 85%;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .body {
@@ -100,6 +100,10 @@ a {
   .container {
     text-align: start;
     padding: 0 5rem;
+  }
+
+  .media-heading {
+    font-size: 1.9rem;
   }
 
   .body-heading {
@@ -213,7 +217,7 @@ a {
   padding: 1.2rem 3rem;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.5s;
+  transition: background 0.5s ease;
   position: relative;
   z-index: 2;
 }
