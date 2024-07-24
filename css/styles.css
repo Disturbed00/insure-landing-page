@@ -30,16 +30,29 @@ a {
   text-decoration: none;
 }
 
+.body {
+  margin-top: 15rem;
+}
+
 .icon-container {
   height: 5.5rem;
   width: 5.5rem;
   margin-bottom: 1.7rem;
 }
 
-.body-heading {
+.body-heading h2 {
   font-size: 4rem;
   margin-bottom: 3rem;
   text-align: center;
+}
+
+.body-heading hr {
+  margin-bottom: 2.7rem;
+  background-color: var(--color-Dark-Violet);
+  opacity: 0.5;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .media-heading {
@@ -52,6 +65,7 @@ a {
   line-height: 2;
   text-align: center;
   padding: 0 3rem;
+  font-size: 1.36rem;
 }
 
 .main-content {
@@ -74,8 +88,13 @@ a {
     line-height: 1.5;
     text-align: start;
     padding: 0;
-    width: 70%;
-    font-size: 1.2rem;
+    width: 85%;
+    font-size: 1.5rem;
+  }
+
+  .body {
+    margin-top: 25rem;
+    padding: 5rem;
   }
 
   .container {
@@ -84,8 +103,33 @@ a {
   }
 
   .body-heading {
+    margin-left: 3.8rem;
+  }
+
+  .body-heading h2 {
+    font-size: 6.2rem;
     text-align: start;
-    padding: 0 5rem;
+    color: var(--color-Dark-Violet);
+    margin-bottom: 5rem;
+    /* padding: 0 5rem; */
+  }
+
+  .body-heading hr {
+    margin-bottom: 5rem;
+    background-color: var(--color-Dark-Violet);
+    opacity: 0.5;
+    width: 20%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .body {
+    margin-top: 5rem;
+  }
+  .container {
+    padding: 0;
   }
 }
 
@@ -95,15 +139,6 @@ a {
   flex-direction: row-reverse;
   position: relative;
 }
-
-/* .hero-container::before,
-.hero-container::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
 
 .hero-content-container::before {
   content: "";
@@ -126,7 +161,7 @@ a {
   width: 100%;
   height: 100%;
   right: -4rem;
-  bottom: 5rem;
+  bottom: 0rem;
 }
 
 .hero-image {
@@ -134,13 +169,6 @@ a {
   margin-right: 7rem;
   width: 100rem;
 }
-/* 
-.pattern-right {
-  position: absolute;
-  left: -2rem;
-  bottom: -10rem;
-  z-index: 1;
-} */
 
 .hero-heading {
   font-size: 7rem;
@@ -162,7 +190,7 @@ a {
   height: 0.2rem;
   margin-bottom: 5rem;
   background: var(--color-Very-Light-Gray);
-  opacity: 0.8;
+  opacity: 0.3;
 }
 
 .hero-text-container {
@@ -186,8 +214,8 @@ a {
   text-transform: uppercase;
   cursor: pointer;
   transition: background 0.5s;
-  /* position: absolute;
-  z-index: 2; */
+  position: relative;
+  z-index: 2;
 }
 
 .btn:hover {
@@ -219,8 +247,6 @@ a {
   .hero-content-container {
     margin: 0;
     text-align: center;
-    /* position: relative;
-    z-index: 1; */
   }
 
   .hero-text-container {
@@ -274,10 +300,11 @@ a {
   content: "";
   position: absolute;
   background-image: url(../images/bg-pattern-how-we-work-desktop.svg);
-  background-size: cover;
+  background-size: 59% 100%;
   background-position: right;
-  width: 47rem;
-  height: 23rem;
+  background-repeat: no-repeat;
+  width: 62rem;
+  height: 30rem;
   top: 0;
   right: 0;
   overflow: hidden;
@@ -306,8 +333,9 @@ a {
 
   .callout-container::after {
     background-image: url(../images/bg-pattern-how-we-work-mobile.svg);
-    width: 20rem;
-    height: 30rem;
+    background-size: 53% 102%;
+    width: 37rem;
+    height: 37rem;
     top: 0rem;
     right: -2.7rem;
   }
@@ -336,7 +364,9 @@ a {
   display: flex;
   justify-content: space-between;
   padding: 2.5rem;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 10;
   align-items: center;
   width: 100%;
@@ -362,12 +392,12 @@ a {
   content: "";
   background-image: url(../images/bg-pattern-mobile-nav.svg);
   background-position: center;
-  background-size: contain;
+  background-size: 100% 83%;
   background-repeat: no-repeat;
   position: absolute;
-  width: 100vw;
+  width: 99vw;
   height: 50vh;
-  top: 44rem;
+  top: 36rem;
   left: 0rem;
   overflow: hidden;
 }
@@ -421,7 +451,7 @@ a {
   display: flex;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1050px) {
   .nav-toggler {
     display: none;
   }
@@ -462,7 +492,7 @@ a {
     border: 1px solid var(--color-Very-Dark-Violet);
     color: var(--color-Very-Dark-Violet);
     margin-top: 0;
-    padding: 1rem 7rem;
+    padding: 0.8rem 4rem;
   }
 
   .nav-item > a:hover {
@@ -488,7 +518,6 @@ a {
 }
 
 .upper-footer {
-  /* margin-bottom: 3rem; */
   position: relative;
   overflow: hidden;
   padding-top: 10rem;
@@ -631,8 +660,6 @@ a {
   }
 
   .social-links {
-    /* padding-left: 30rem;
-    margin-right: 2rem; */
     margin-right: 7rem;
     font-size: 0rem;
   }
